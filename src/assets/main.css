@@ -1,0 +1,19 @@
+@import url(./tailwind.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.scale-enter-active,
+.scale-leave-active {
+	transition: all 0.5s ease;
+}
+
+.scale-enter-from,
+.scale-leave-to {
+	opacity: 0;
+	transform: scale(0.9);
+}
