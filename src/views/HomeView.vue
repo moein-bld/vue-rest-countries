@@ -13,12 +13,7 @@
 			</div>
 		</div>
 
-		<div class="w-full h-screen z-50 overflow-hidden flex flex-col items-center dark:text-main pt-16 mt-16" v-if="loading">
-			<div class="pt-16 mt-16"></div>
-			<div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
-			<h2 class="text-center text-white text-xl font-semibold">Loading...</h2>
-			<p class="w-1/3 text-center text-white">This may take a few seconds, please don't close this page.</p>
-		</div>
+		
 
 		<lazy-component class="grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-14 h-full">
 			<m-card
@@ -30,6 +25,7 @@
 				:population="card.population"
 				:capital="card.capital"
 				:region="card.region"
+				:loading="loading"
 			>
 			</m-card>
 		</lazy-component>

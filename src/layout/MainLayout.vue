@@ -12,7 +12,7 @@
 				</span>
 			</div>
 		</div>
-
+		
 		<main class="w-full p-4 dark:bg-secondary pt-12 transition-colors h-full">
 			<div class="w-11/12 lg:w-10-/12 2xl:w-9/12 mx-auto">
 				<router-view v-slot="{ Component }">
