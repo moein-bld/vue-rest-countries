@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = `https://restcountries.com/v2/`;
+const baseURL = `https://restcountries.com/v3.1/`;
 const baseHeader = {
 	Accept: 'application/json',
 	'Content-Type': 'application/json',

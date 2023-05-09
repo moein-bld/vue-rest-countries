@@ -13,22 +13,33 @@
 			</div>
 		</div>
 
-		
+		<div class="grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-14 h-full" v-if="loading">
+			<div class="shadow-md rounded-md dark:text-main dark:bg-card hover:scale-105 transition-transform animate-pulse" v-for="item in 8">
+				<div class="w-full h-[200px] bg-gray-300 dark:bg-gray-700 rounded"></div>
 
-		<lazy-component class="grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-14 h-full">
-			<m-card
-				v-for="card in cards"
-				:key="card.name"
-				:img="card.flags.png"
-				:alt="card.flags.alt"
-				:name="card.name"
-				:population="card.population"
-				:capital="card.capital"
-				:region="card.region"
-				:loading="loading"
-			>
-			</m-card>
-		</lazy-component>
+				<div class="p-4">
+					<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+					<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+					<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+					<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-14 h-full">
+			<lazy-component v-for="card in cards" :key="card.name.common">
+				<m-card
+					:img="card.flags.png"
+					:alt="card.flags.alt"
+					:name="card.name.common"
+					:population="card.population"
+					:capital="card.capital[0]"
+					:region="card.region"
+					:loading="loading"
+				>
+				</m-card>
+			</lazy-component>
+		</div>
 	</div>
 </template>
 
