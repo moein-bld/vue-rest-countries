@@ -1,5 +1,5 @@
 <template>
-	<div >
+	<div>
 		<div class="flex flex-wrap md:justify-between">
 			<div class="w-full md:w-5/12 xl:w-4/12">
 				<m-input type="text" placeholder="Search for a country..." icon v-model="search">
@@ -20,7 +20,7 @@
 			<p class="w-1/3 text-center text-white">This may take a few seconds, please don't close this page.</p>
 		</div>
 
-		<div class="wrapper-card mt-14 h-full">
+		<lazy-component class="grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-14 h-full">
 			<m-card
 				v-for="card in cards"
 				:key="card.name"
@@ -32,7 +32,7 @@
 				:region="card.region"
 			>
 			</m-card>
-		</div>
+		</lazy-component>
 	</div>
 </template>
 
@@ -129,13 +129,6 @@ getAllCountries();
 </script>
 
 <style>
-.wrapper-card {
-	display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    grid-gap: 60px 20px;
-    justify-items: center;
-}
-
 .loader {
 	border-top-color: #3498db;
 	-webkit-animation: spinner 1.5s linear infinite;

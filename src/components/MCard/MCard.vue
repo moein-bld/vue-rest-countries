@@ -1,6 +1,6 @@
 <template>
-	<div class="shadow-md rounded-md dark:text-main dark:bg-card hover:scale-105 transition-transform">
-		<img :src="img" :alt="alt" class="w-full max-h-[200px] min-h-[200px] object-cover" />
+	<div class="shadow-md rounded-md dark:text-main dark:bg-card hover:scale-105 transition-transform"  v-lazy-container="{ selector: 'img' }"	>
+		<img :data-src="img" :alt="alt" class="w-full max-h-[200px] min-h-[200px] object-cover" />
 
 		<div class="p-4">
 			<p class="text-xl font-bold mb-4">{{ name }}</p>

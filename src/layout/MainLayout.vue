@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="dark:bg-primary dark:text-main p-6 w-full shadow-md transition-colors">
-			<div class="w-11/12 lg:w-9/12 mx-auto flex justify-between items-center">
+			<div class="w-11/12 lg:w-10-/12 xl:w-9/12 mx-auto flex justify-between items-center">
 				<span class="md:text-2xl font-medium"> Where in the world? </span>
 
 				<span class="flex items-center cursor-pointer text-sm md:text-md" @click="changeTheme">
@@ -14,7 +14,7 @@
 		</div>
 
 		<main class="w-full p-4 dark:bg-secondary pt-12 transition-colors h-full">
-			<div class="w-11/12 lg:w-9/12 mx-auto">
+			<div class="w-11/12 lg:w-10-/12 2xl:w-9/12 mx-auto">
 				<router-view v-slot="{ Component }">
 					<transition name="scale" mode="out-in">
 						<component :is="Component" />
