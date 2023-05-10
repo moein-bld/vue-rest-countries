@@ -13,6 +13,11 @@ const router = createRouter({
 					name: 'Index',
 					component: () => import('../views/HomeView.vue'),
 				},
+				{
+					path: 'details/:country',
+					name: 'Details',
+					component: () => import('../views/DetailsView.vue'),
+				},
 			],
 		},
 	],
