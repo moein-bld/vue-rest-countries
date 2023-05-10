@@ -1,6 +1,14 @@
-# vue-project
+# Vue.JS App using REST API to display country data
 
-This template should help get you started developing with Vue 3 in Vite.
+**Features include:**
+- Loading animiation before API request completes
+- Colour theme switchter (Dark Mode)
+- Search bar that automatically filters results
+- Dropdown filter to again filter results
+- Border country links to other countries
+- A back button which is based on user history
+- Use repositories pattern for call api
+- Dockerize App
 
 ## Recommended IDE Setup
 
@@ -27,16 +35,60 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 pnpm install
 ```
 
+```sh
+yarn
+```
+
+```sh
+npm i
+```
+
 ### Compile and Hot-Reload for Development
 
 ```sh
 pnpm dev
 ```
 
+```sh
+yarn dev
+```
+
+```sh
+npm run dev
+```
+
+### Compile, Build a docker image, and run
+
+# Install docker first if not installed - one time
+```sh
+brew install docker
+```
+
+# Run Docker if not running (macos)
+open --background -a Docker
+
+```sh
+docker build -t my-app .
+```
+
+```sh
+docker run -d -p 3000:3000 --env-file config/.env my-app
+```
+
+Open browser to: http://localhost:3000
+
 ### Type-Check, Compile and Minify for Production
 
 ```sh
 pnpm build
+```
+
+```sh
+yarn build
+```
+
+```sh
+npm run build
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
