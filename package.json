@@ -5,8 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"client": "pnpm --filter @app/client",
-		"lib": "pnpm --filter @pack/ui-lib",
-		"dev": "pnpm --recursive --parallel --stream run dev"
+		"build:client": "pnpm --filter @app/client build",
+		"build:lib": "pnpm --filter @pack/ui-lib build",
+		"dev": "pnpm build:client && pnpm --recursive --parallel --stream run dev"
 	},
 	"keywords": [],
 	"author": "",

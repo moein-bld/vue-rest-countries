@@ -5,11 +5,12 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "vue-tsc && vite build",
+		"build": "vite build",
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"vue": "^3.2.47"
+		"vue": "^3.2.47",
+		"vue-router": "^4.2.0"
 	},
 	"devDependencies": {
 		"@pack/tailwind-config": "workspace:^",
