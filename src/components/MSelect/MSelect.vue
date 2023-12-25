@@ -13,7 +13,9 @@
 			</svg>
 		</button>
 		<ul class="absolute top-14 rounded-md w-full p-2 dark:text-main dark:bg-primary bg-primary-light shadow-md cursor-pointer transition-colors z-50" v-if="dropdown.active.value">
-			<li class="py-2 w-full text-center" :class="{ 'text-blue-400': activeItem === item.value }" v-for="item in option" key="item.value" @click="setActive(item)">{{ item.text }}</li>
+			<li class="py-2 w-full text-center" :class="{ 'text-blue-400': activeItem === item.value }" v-for="item in option" key="item.value" @click="setActive(item)">
+				{{ item.text }}
+			</li>
 		</ul>
 	</div>
 </template>

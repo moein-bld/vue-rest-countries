@@ -10,6 +10,6 @@ const baseHeader = {
 export const BaseClient = axios.create({
 	baseURL: baseURL,
 	headers: {
-		...baseHeader
+		...baseHeader,
 	},
 });

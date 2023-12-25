@@ -12,9 +12,9 @@ const app = createApp(App);
 app.use(createPinia());
 app.use(router);
 app.use(VueLazyload, {
-    lazyComponent: true,
+	lazyComponent: true,
 	attempt: 1,
-    observer: true,
+	observer: true,
 	listenEvents: ['scroll'],
 });
 

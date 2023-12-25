@@ -69,8 +69,8 @@
 </template>
 
 <script setup lang="ts">
-import { type PropType } from 'vue'
-import { type CountryDetailsDto } from '@/dto/country.details.dto'
+import { type PropType } from 'vue';
+import { type CountryDetailsDto } from '@/dto/country.details.dto';
 import MBtn from '@/components/MBtn/MBtn.vue';
 
 defineProps({
@@ -85,6 +85,6 @@ const emit = defineEmits<{
 }>();
 
 async function getCountryBorder(name: string) {
-	emit('country', name)
+	emit('country', name);
 }
 </script>

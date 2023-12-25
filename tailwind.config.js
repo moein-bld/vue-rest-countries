@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,vue}'],
@@ -20,7 +20,7 @@ export default {
 			main: {
 				light: '#000',
 				DEFAULT: '#fff',
-				dark: '#fff'
+				dark: '#fff',
 			},
 			card: {
 				DEFAULT: '#2b3945',

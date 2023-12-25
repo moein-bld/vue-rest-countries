@@ -28,8 +28,7 @@
 
 		<div class="grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-14 h-full">
 			<lazy-component v-for="card in cards" :key="card.name">
-				<m-card :img="getFlagUrl(card)" :name="card.name" :population="card.population" :capital="card.capital" :region="card.region" :to="card.alpha3Code">
-				</m-card>
+				<m-card :img="getFlagUrl(card)" :name="card.name" :population="card.population" :capital="card.capital" :region="card.region" :to="card.alpha3Code"> </m-card>
 			</lazy-component>
 		</div>
 	</div>
@@ -125,7 +124,7 @@ async function getAllCountriesByName(name: string) {
 }
 
 function getFlagUrl(country: CountryDetailsDto) {
-	if (!!country?.flag) return country.flag
+	if (!!country?.flag) return country.flag;
 	return !!country.flags ? country.flags.png : '';
 }
 

@@ -45,7 +45,7 @@ watch(
 	async () => {
 		await getAllCountriesByName(route.params.country);
 		await getAllCountryBorder(country.value.borders);
-	}
+	},
 );
 
 async function getAllCountriesByName(name: string | any) {

@@ -12,7 +12,7 @@
 				</span>
 			</div>
 		</div>
-		
+
 		<main class="w-full p-4 dark:bg-secondary pt-12 transition-colors h-full">
 			<div class="w-11/12 lg:w-10-/12 2xl:w-9/12 mx-auto">
 				<router-view v-slot="{ Component }">
@@ -46,14 +46,13 @@ function initTheme() {
 	if (current === null) setTheme(`${mode.value}`);
 	else mode.value = JSON.parse(current || 'true');
 
-	if(mode.value) document.querySelector('html')?.classList.add('dark');
+	if (mode.value) document.querySelector('html')?.classList.add('dark');
 	else document.querySelector('html')?.classList.remove('dark');
-	
 }
 
 function changeTheme() {
 	mode.value = !mode.value;
-	if(mode.value) document.querySelector('html')?.classList.add('dark');
+	if (mode.value) document.querySelector('html')?.classList.add('dark');
 	else document.querySelector('html')?.classList.remove('dark');
 	setTheme(`${mode.value}`);
 }
