@@ -26,6 +26,7 @@ export default {
 				DEFAULT: '#2b3945',
 			},
 			gray: colors.gray,
+			blue: colors.blue,
 		},
 		extend: {},
 	},

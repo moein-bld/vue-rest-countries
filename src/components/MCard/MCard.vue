@@ -2,11 +2,11 @@
 	<RouterLink :to="`/details/${name}`">
 		<div class="shadow-md rounded-md dark:text-main dark:bg-card hover:scale-105 transition-transform">
 			<div class="w-full h-[200px] bg-gray-300 dark:bg-gray-700 rounded">
-				<img :src="img" :alt="alt" class="w-full max-h-[200px] min-h-[200px] object-cover" />
+				<img :src="img" :alt="`${name} flag`" class="w-full max-h-[200px] min-h-[200px] object-cover" />
 			</div>
 	
 			<div class="p-4">
-				<p class="text-xl font-bold mb-4">{{ name }}</p>
+				<p class="text-xl font-bold mb-4 line-clamp-1">{{ name }}</p>
 	
 				<p class="text-sm mt-1">
 					<span class="dark:text-gray-50 font-medium transition-colors"> Population : </span>
@@ -32,12 +32,8 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
 	img: {
-		type: String,
-		required: false,
-	},
-	alt: {
 		type: String,
 		required: false,
 	},

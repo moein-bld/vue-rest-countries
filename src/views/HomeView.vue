@@ -2,7 +2,7 @@
 	<div>
 		<div class="flex flex-wrap md:justify-between">
 			<div class="w-full md:w-5/12 xl:w-4/12">
-				<m-input type="text" placeholder="Search for a country..." icon v-model="search">
+				<m-input type="text" placeholder="Search for a country..." icon v-model="search" :debounce="500">
 					<template v-slot:icon>
 						<SearchIcon class="w-4 h-4 dark:text-main"></SearchIcon>
 					</template>
@@ -28,7 +28,7 @@
 
 		<div class="grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-14 h-full">
 			<lazy-component v-for="card in cards" :key="card.name">
-				<m-card :img="card.flags.png" :alt="card.flags.alt" :name="card.name" :population="card.population" :capital="card.capital" :region="card.region" :to="card.alpha3Code">
+				<m-card :img="getFlagUrl(card)" :name="card.name" :population="card.population" :capital="card.capital" :region="card.region" :to="card.alpha3Code">
 				</m-card>
 			</lazy-component>
 		</div>
@@ -42,6 +42,7 @@ import MSelect from '@/components/MSelect/MSelect.vue';
 import MCard from '@/components/MCard/MCard.vue';
 import SearchIcon from '@/components/Icons/SearchIcon.vue';
 import RepositoryFactory from '@/repositories/RepositoryFactory';
+import type { CountryDetailsDto } from '@/dto/country.details.dto';
 
 const { Countries } = RepositoryFactory.repositories;
 
@@ -77,7 +78,6 @@ const region = ref([
 ]);
 
 watch(value, val => {
-	console.log(val);
 	if (val === 'All') getAllCountries();
 	else getAllCountriesByRegion(val);
 });
@@ -122,6 +122,11 @@ async function getAllCountriesByName(name: string) {
 	} finally {
 		loading.value = false;
 	}
+}
+
+function getFlagUrl(country: CountryDetailsDto) {
+	if (!!country?.flag) return country.flag
+	return !!country.flags ? country.flags.png : '';
 }
 
 getAllCountries();

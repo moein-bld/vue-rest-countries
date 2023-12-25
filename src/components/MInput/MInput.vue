@@ -12,34 +12,58 @@
 				:placeholder="placeholder"
 				autocomplete="off"
 				:value="modelValue"
-				@input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
+				@input="handleInput"
 			/>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
 const props = defineProps({
 	type: {
 		type: String,
-		required: false,
-		defult: 'text',
+		default: 'text',
 	},
 	placeholder: {
 		type: String,
-		required: false,
+		default: '',
 	},
 	icon: {
 		type: Boolean,
-		required: false,
+		default: false,
+	},
+	debounce: {
+		type: Number,
+		default: 0,
 	},
 	modelValue: {
 		type: String,
-		required: false,
-	}
+		default: '',
+	},
 });
 
 const emit = defineEmits<{
-	(e: 'update:modelValue', payload: string): void;
+	(event: 'update:modelValue', payload: string): void;
 }>();
+
+const debouncedInput = debounce((value: string) => {
+	emit('update:modelValue', value);
+}, props.debounce);
+
+function debounce(fn: (...args: any[]) => void, delay: number): (...args: any[]) => void {
+	let timeoutId: ReturnType<typeof setTimeout> | null = null;
+	return (...args: any[]) => {
+		if (timeoutId !== null) {
+			clearTimeout(timeoutId);
+		}
+		timeoutId = setTimeout(() => fn(...args), delay);
+	};
+}
+
+function handleInput(event: Event) {
+	const target = event.target as HTMLInputElement;
+	debouncedInput(target.value);
+}
 </script>

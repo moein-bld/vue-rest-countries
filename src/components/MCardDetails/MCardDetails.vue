@@ -73,7 +73,7 @@ import { type PropType } from 'vue'
 import { type CountryDetailsDto } from '@/dto/country.details.dto'
 import MBtn from '@/components/MBtn/MBtn.vue';
 
-const props = defineProps({
+defineProps({
 	country: {
 		type: Object as PropType<CountryDetailsDto>,
 		required: true,

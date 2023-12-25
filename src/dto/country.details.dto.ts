@@ -11,5 +11,11 @@ export type CountryDetailsDto = {
     currencies: string;
     languages: string;
     flag: string;
+    flags?: Flags;
     independent: boolean;
+}
+
+interface Flags {
+    svg: string
+    png: string
 }
